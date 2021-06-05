@@ -1,0 +1,14 @@
+<div class="container" fxFlex="row" *ngIf="service.state$ | async as state">
+  <div fxFlex fxLayout="row">
+    <mat-icon>pets</mat-icon>
+    <div class="text">: {{ state.X }}</div>
+  </div>
+  <div fxFlex fxLayout="row">
+    <mat-icon>cruelty_free</mat-icon>
+    <div class="text">: {{ state.O }}</div>
+  </div>
+  <div fxFlex fxLayout="row">
+    <mat-icon>sports_hockey</mat-icon>
+    <div class="text">: {{ state.empates }}</div>
+  </div>
+</div>

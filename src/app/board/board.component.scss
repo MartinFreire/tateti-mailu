@@ -1,0 +1,28 @@
+.toolbar {
+  margin-bottom: 16px;
+  max-height: 40px;
+}
+
+.grid-container {
+  height: calc(100vh - 200px);
+  width: auto;
+  border: 1px solid gray;
+
+  display: grid;
+  grid-template-columns: 1px 1fr 1fr 1fr 1px;
+  grid-template-rows: 1px 1fr 1fr 1fr 1px;
+  gap: 0px 0px;
+  grid-template-areas:
+    '. . . . .'
+    '. . . . .'
+    '. . . . .';
+
+  div.celda {
+    border: 1px solid gray;
+
+    app-board-cell-value {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<ng-container *ngIf="state$ | async as state">
+  <div class="toolbar" fxLayout="row" fxLayoutGap="30px">
+    <div>
+      <button mat-raised-button (click)="resetGame()">NUEVO JUEGO</button>
+    </div>
+    <div class="ganador" *ngIf="state.ganador">
+      <h1 *ngIf="state.ganador === 'empates'">Juego Empatado</h1>
+      <h1 *ngIf="state.ganador !== null && state.ganador !== 'empates'">
+        Gano el jugador: <mat-icon>{{ state.ganador === 'X' ? 'pets' : 'cruelty_free' }}</mat-icon>
+      </h1>
+    </div>
+    <div fxFlex></div>
+    <div>
+      <app-contador-resultados></app-contador-resultados>
+    </div>
+  </div>
+</ng-container>
+
+<div class="grid-container">
+  <div id="11d"></div>
+  <div id="11v"></div>
+  <div id="12v"></div>
+  <div id="13v"></div>
+  <div id="13d"></div>
+
+  <div id="11h"></div>
+  <ng-container *ngIf="state$ | async as state">
+    <div class="celda" (click)="clickCelda(state, '11')">
+      <app-board-cell-value [value]="state.tablero.celda11"></app-board-cell-value>
+    </div>
+    <div class="celda" (click)="clickCelda(state, '12')">
+      <app-board-cell-value [value]="state.tablero.celda12"></app-board-cell-value>
+    </div>
+    <div class="celda" (click)="clickCelda(state, '13')">
+      <app-board-cell-value [value]="state.tablero.celda13"></app-board-cell-value>
+    </div>
+  </ng-container>
+  <div id="13h"></div>
+
+  <div id="21h"></div>
+  <ng-container *ngIf="state$ | async as state">
+    <div class="celda" (click)="clickCelda(state, '21')">
+      <app-board-cell-value [value]="state.tablero.celda21"></app-board-cell-value>
+    </div>
+    <div class="celda" (click)="clickCelda(state, '22')">
+      <app-board-cell-value [value]="state.tablero.celda22"></app-board-cell-value>
+    </div>
+    <div class="celda" (click)="clickCelda(state, '23')">
+      <app-board-cell-value [value]="state.tablero.celda23"></app-board-cell-value>
+    </div>
+  </ng-container>
+  <div id="23h"></div>
+
+  <div id="31h"></div>
+  <ng-container *ngIf="state$ | async as state">
+    <div class="celda" (click)="clickCelda(state, '31')">
+      <app-board-cell-value [value]="state.tablero.celda31"></app-board-cell-value>
+    </div>
+    <div class="celda" (click)="clickCelda(state, '32')">
+      <app-board-cell-value [value]="state.tablero.celda32"></app-board-cell-value>
+    </div>
+    <div class="celda" (click)="clickCelda(state, '33')">
+      <app-board-cell-value [value]="state.tablero.celda33"></app-board-cell-value>
+    </div>
+  </ng-container>
+  <div id="33h"></div>
+
+  <div id="31d"></div>
+  <div id="31v"></div>
+  <div id="32v"></div>
+  <div id="33v"></div>
+  <div id="33d"></div>
+</div>

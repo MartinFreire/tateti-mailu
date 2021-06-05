@@ -1,0 +1,17 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+#container {
+  margin-top: 20px;
+  height: calc(100vh - 100px);
+}
+
+mat-card {
+  margin: auto;
+}
+
+.sidenav-bar {
+  padding: 20px;
+  min-width: 300px;
+}
